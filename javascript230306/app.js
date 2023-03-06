@@ -17,6 +17,8 @@ menuList.map(menu => {
     const li = document.createElement("li");
     const a = document.createElement("a");
     a.textContent = menu;
+    a.href = "#";
+    
     li.appendChild(a);
     ul.appendChild(li);
 })
