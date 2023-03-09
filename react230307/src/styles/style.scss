@@ -1,0 +1,130 @@
+@import 'reset.css';
+
+* { box-sizing: border-box; }
+
+main {
+    position : relative;
+    max-width: 1200px;
+    margin : 0 auto;
+}
+
+header {
+    position : relative;
+    width : 100%;
+    padding : 1.5rem 3rem;
+    display: flex;
+    justify-content: flex-end;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    
+    h2 {
+        position : absolute;
+        top : 50%;
+        left : 50%;
+        font-size : 1.5rem;
+        transform : translate(-50%, -50%);
+        span { font-weight: 100; }
+        b { font-weight: 600; }
+    }
+
+    nav {
+        &>div { 
+            font-weight : 600; 
+        }
+        
+        ul {
+            position : absolute;
+            display: flex;
+            flex-direction: column;
+            padding-top : 1rem;
+            gap : 1rem;
+            transform : translateX(calc(-100% + 1rem));
+
+            li {
+                position : relative;
+                text-align: right;
+                a { 
+                    font-weight: 400;
+                    text-decoration: none; 
+                    color : rgb(32, 32, 32);
+                    &:hover { color : gray; }
+                    transition : 0.5s;
+                }
+            }
+        }
+    }
+}
+
+.carousel {
+    position : relative;
+    width : 100%;
+    height : 600px;
+    max-height : 600px;
+    .items {
+        position : absolute;
+        width : 100%;
+        height: 100%;
+        .item {
+            position : absolute;
+            width : 100%;
+            height : 100%;
+            transition : 0.5s;
+
+            .info {
+                position : absolute;
+                top : 50%;
+                padding : 40px;
+                display: flex;
+                flex-direction: column;
+                gap : 0.8rem;
+                color : white;
+                background: rgba(29, 29, 29, 0.69);
+
+                h3 {
+                    font-size : 1.2rem;
+                }
+                h1 {
+                    font-size : 1.7rem;
+                    font-weight : 600;
+                }
+                span {
+                    max-width : 600px;
+                    line-height: 1.2;
+                    color : rgb(225, 225, 225);
+                }
+            }
+            &.fade-in { opacity: 100%; }
+            &.fade-out { opacity: 0%; }
+        }
+        img {
+            width : 100%;
+            height : 100%;
+            object-fit: cover;
+        }
+    }
+    .dots {
+        position : absolute;
+        display: flex;
+        gap : 10px;
+        bottom : 1rem;
+        left : 50%;
+        transform : translateX(-50%);
+        .dot {
+            position : relative;
+            display: block;
+            width : 8px;
+            height : 8px;
+            background: rgb(255, 255, 255);
+            transition : 0.5s;
+            opacity: 70%;
+            cursor: pointer;
+            &.active {
+                width : 25px;
+                opacity: 100%;
+                background: rgb(255, 255, 255);
+            }
+        }
+    }
+}
