@@ -213,6 +213,25 @@ footer {
     width : 100%;
     padding : 100px;
     display: flex;
+    flex-flow : column wrap;
     justify-content: center;
     align-items: center;
+    .items {
+        position: relative;
+        margin-top : 80px;
+        letter-spacing: 1px;
+        .item {
+            text-align: center;
+            margin : 3rem 0;
+            h3 {
+                font-size : 1.15rem;
+                font-weight: 600;
+                margin-bottom : 0.8rem;
+            }
+            div  {
+                color : rgb(80, 80, 80);
+                font-weight: 400;
+            }
+        }
+    }
 }
