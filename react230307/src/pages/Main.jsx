@@ -1,6 +1,8 @@
 import Carousel from "components/Carousel";
 import LineLayout from "components/LineLayout";
 import Post from "components/Post";
+import PostModal from "components/PostModal";
+import { useState } from "react";
 
 const postList = [
     {
@@ -55,22 +57,32 @@ const postList = [
 ]
 
 export default function Main() {
+    const [modalSrc, setModalSrc] = useState("");
+    const [onModal, setOnModal] = useState(false);
+
     const postLeft = [];
     const postRight = [];
 
-    postList.forEach((data, index) => {
-        const post = <Post key={`post_${index}`} title={data.title} description={data.description} url={data.url}/>
+    const onModalHandler = (src) => {
+        setModalSrc(src);
+        setOnModal(true);
+    }
 
-        if(index % 2 == 0) {
-            postLeft.push(post);
-        }
-        else {
-            postRight.push(post);
-        }
+    const offModalHandler = () => {
+        setOnModal(false);
+    } 
+
+    postList.forEach((data, index) => {
+        const post = <Post key={`post_${index}`} title={data.title} description={data.description} url={data.url} modalHandler={onModalHandler}/>;
+        if(index % 2 === 0) { postLeft.push(post); }
+        else { postRight.push(post); }
     })
+
+    
 
     return (
         <div className="main">
+            {onModal ? <PostModal src={modalSrc} closeHandler={offModalHandler} /> : null}
             <Carousel/>
             <div className="container">
                 <h2>GALLERYS</h2>
