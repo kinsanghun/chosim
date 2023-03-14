@@ -78,8 +78,6 @@ export default function Main() {
         else { postRight.push(post); }
     })
 
-    
-
     return (
         <div className="main">
             {onModal ? <PostModal src={modalSrc} closeHandler={offModalHandler} /> : null}
