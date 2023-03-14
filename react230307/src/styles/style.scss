@@ -30,6 +30,8 @@ header {
     }
 
     nav {
+        position: relative;
+        z-index: 1000;
         &>div { 
             font-weight : 600; 
         }
@@ -55,6 +57,16 @@ header {
             }
         }
     }
+}
+footer {
+    position: relative;
+    display: flex;
+    padding : 150px;
+    gap : .2rem;
+    justify-content: center;
+    align-items: center;
+    color : #3b3434;
+    b { font-weight : 600; }
 }
 
 .carousel {
@@ -127,4 +139,80 @@ header {
             }
         }
     }
+}
+
+.main {
+    position : relative;
+    .container {
+        position : relative;
+        width : 100%;
+        h2 {
+            text-align: center;
+            font-size : 1.5rem; 
+            font-weight : 600;
+            margin : 3rem 0; 
+        }
+        & > div {
+            position: relative;
+            display: flex;
+            gap : 2rem;
+
+            section {
+                position : relative;
+                flex : 1;
+                .post {
+                    position : relative;
+                    width : 100%;
+                    margin-bottom : 1.5rem;
+                    .image-box {
+                        img {
+                            position : relative;
+                            width : 100%;
+                            height : 100%;
+                            object-fit: cover;
+                        }
+                    }
+                    .content {
+                        padding : 1rem 0;
+                        display: flex;
+                        gap : 8px;
+                        flex-flow: column nowrap;
+                        h3 {
+                            font-size : 1.2rem;
+                            font-weight : 600;
+                        }
+                        .description {
+                            font-size : 1rem;
+                            color : rgb(46, 46, 46);
+                        }
+                        .more {
+                            position : relative;
+                            display: inline-flex;
+                            margin-top : 1rem;
+                            font-size : 1.1rem;
+                            gap : 0.8rem;
+                            align-items: center;
+                            text-decoration: underline;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }   
+    }    
+}
+.line-title {
+    margin : 0 auto;
+
+    .line {
+        padding : 0 0.5rem;
+        border-bottom : 1px solid black;
+    }
+}
+.contact {
+    width : 100%;
+    padding : 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

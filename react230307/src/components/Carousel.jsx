@@ -1,5 +1,6 @@
 import CAROUSEL_DATA from "assets/json/carousel";
 import { useEffect, useMemo, useRef, useState } from "react";
+import LazyImage from "./LazyImage";
 
 function Carousel() {
     const datas = CAROUSEL_DATA.carousels;
@@ -18,7 +19,7 @@ function Carousel() {
                     <h1>{data.title}</h1>
                     <span>{data.description}</span>
                 </div>
-                <img src={require("assets/images/" + data.url)} alt={data.title}/>
+                <LazyImage src={require("assets/images/" + data.url)} />
             </div>);
     }, [datas])
 
